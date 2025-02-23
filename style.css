@@ -42,3 +42,7 @@ body {
 body, .container, .title, .start-text {
     image-rendering: pixelated;
 }
+
+body {
+    cursor: none; /* Убираем курсор по умолчанию для всего body */
+}
