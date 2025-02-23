@@ -11,16 +11,27 @@ scene1Image.onload = function() {
 
 function drawScene1() {
     // Рисуем изображение
-    ctx.drawImage(scene1Image, 0, 0, canvas.width, canvas.height); // Рисуем на весь холст
+    ctx.drawImage(scene1Image, 0, 0, canvas.width, canvas.height);
 
     // Настройки текста
     ctx.font = '24px Arial';
     ctx.fillStyle = 'white';
-    ctx.textAlign = 'center'; // Выравниваем текст по центру
+    ctx.textAlign = 'center';
+
+    // Добавляем тень
+    ctx.shadowColor = 'black'; // Цвет тени
+    ctx.shadowOffsetX = 2;       // Смещение тени по X
+    ctx.shadowOffsetY = 2;       // Смещение тени по Y
+    ctx.shadowBlur = 0;          // Размытие тени (0 для четкой пиксельной тени)
 
     // Рисуем текст
     var text = "Элизабет нашла утешение в слове Божьем, но ее сердце было встревожено судьбой ее сына.";
-    wrapText(ctx, text, canvas.width / 2, 500, 750, 30); // Функция для переноса текста
+    wrapText(ctx, text, canvas.width / 2, 500, 750, 30);
+
+    // Отключаем тень (важно для следующих операций рисования)
+    ctx.shadowColor = 'transparent';
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
 }
 
 // Функция для переноса текста на новую строку
