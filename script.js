@@ -1,3 +1,4 @@
+const overlay = document.getElementById('overlay'); // Получаем overlay
 const menu = document.getElementById('menu');
 const menuItems = document.querySelectorAll('#menu li');
 const menuArrow = document.getElementById('menu-arrow');
@@ -20,16 +21,20 @@ function updateActiveClass() {
 }
 
 function openMenu() {
-  menu.classList.remove('menu-hidden');
-  menu.classList.add('menu-visible');
-  isMenuOpen = true;
-  updateActiveClass(); // Устанавливаем активный класс при открытии меню
+    overlay.classList.remove('overlay-hidden');  // Показываем overlay
+    overlay.classList.add('overlay-visible');
+    menu.classList.remove('menu-hidden');
+    menu.classList.add('menu-visible');
+    isMenuOpen = true;
+    updateActiveClass(); // Устанавливаем активный класс при открытии меню
 }
 
 function closeMenu() {
-  menu.classList.remove('menu-visible');
-  menu.classList.add('menu-hidden');
-  isMenuOpen = false;
+    overlay.classList.remove('overlay-visible');   // Скрываем overlay
+    overlay.classList.add('overlay-hidden');
+    menu.classList.remove('menu-visible');
+    menu.classList.add('menu-hidden');
+    isMenuOpen = false;
 }
 
 // Обработчик нажатия клавиши Space
