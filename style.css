@@ -1,0 +1,44 @@
+body {
+    background-color: #222; /* Темный фон для соответствия стилю Isaac */
+    color: #fff; /* Белый текст */
+    font-family: 'Press Start 2P', cursive; /* Пиксельный шрифт (подключите ниже) */
+    margin: 0;
+    overflow: hidden; /* Убираем полосы прокрутки, если они появятся */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Занимает всю высоту экрана */
+}
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('PressStart2P-Regular.ttf') format('truetype'); /* Замените 'PressStart2P-Regular.ttf' на путь к вашему файлу шрифта */
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 4em;
+    color: red;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Небольшая тень */
+}
+
+.start-text {
+    font-size: 2em;
+    cursor: pointer; /* Меняем курсор при наведении */
+    animation: blinker 1s linear infinite; /* Анимация мигания */
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Дополнительные стили для пиксельности */
+body, .container, .title, .start-text {
+    image-rendering: pixelated;
+}
