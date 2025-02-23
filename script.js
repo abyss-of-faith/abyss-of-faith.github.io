@@ -6,7 +6,9 @@ let currentMenuItemIndex = 0;
 let isMenuOpen = false;
 
 function updateMenuArrowPosition() {
-    menuArrow.style.top = (currentMenuItemIndex * 30 + 10) + 'px'; // 30 - высота пункта меню + отступ
+    const activeMenuItem = menuItems[currentMenuItemIndex];
+    const menuItemTop = activeMenuItem.offsetTop;
+    menuArrow.style.top = menuItemTop + 'px';
 }
 
 function updateActiveClass() {
