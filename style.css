@@ -46,3 +46,49 @@ body, .container, .title, .start-text {
 body {
     cursor: none; /* Убираем курсор по умолчанию для всего body */
 }
+
+#menu {
+    position: absolute; /* Абсолютное позиционирование, чтобы меню не влияло на остальной контент */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+    padding: 20px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive; /* Или другой пиксельный шрифт */
+    z-index: 1000; /* Убедитесь, что меню поверх всего */
+    display: none; /* Скрываем меню по умолчанию */
+}
+
+#menu.menu-visible {
+    display: block; /* Показываем меню, когда добавлен класс */
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu li {
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+#menu li.active {
+    color: red; /* Выделение активного пункта */
+}
+
+#menu-arrow {
+    position: absolute;
+    left: -20px; /* Размещаем стрелку слева от пунктов меню */
+    top: 10px; /* Выравниваем по первому пункту */
+    font-size: 1.2em;
+    color: red;
+}
+
+.menu-hidden {
+  display: none !important;
+}
